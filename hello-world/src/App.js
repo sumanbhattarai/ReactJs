@@ -6,7 +6,8 @@ import Greet from './components/Greet' ;
 function App() {
   return (
     <div className="App">
-      <Greet />
+      <Greet name='Suman' />
+      <Greet name='Sujan' >I am 20 years old. </Greet>
     </div>
   );
 }
