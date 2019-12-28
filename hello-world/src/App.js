@@ -3,13 +3,18 @@ import React from 'react';
 import './App.css';
 import Greet from './components/Greet' ;
 
-function App() {
-  return (
-    <div className="App">
-      <Greet name='Suman' />
-      <Greet name='Sujan' >I am 20 years old. </Greet>
+class App extends React.Component{
+  state = {
+    name : [ 'Suman' , 'Sujan']
+  }
+  render(){
+    return (
+      <div className="App">
+        <Greet name={this.state.name[0]} />
+        <Greet name={this.state.name[1]} >I am 20 years old. </Greet>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
