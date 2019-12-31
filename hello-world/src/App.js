@@ -30,6 +30,14 @@ class App extends React.Component{
     })
   }
 
+  deleteHandler = (personIndex) => {
+    const name =  this.state.name ;
+    name.splice(personIndex , 1 ) ;
+    this.setState({
+      name : name 
+    })
+  }
+
   render(){
     let person = null ;
     let buttonName = 'Hide' ;
@@ -37,8 +45,8 @@ class App extends React.Component{
       person = (
         <div>
           {
-            this.state.name.map(name => {
-              return <Greet name={name} /> ;
+            this.state.name.map((name , index) => {
+              return <Greet name={name} click={()=>this.deleteHandler(index)} /> ;
             })
           }
           {/* <Greet change={this.changeName} name={this.state.name[0]} />
