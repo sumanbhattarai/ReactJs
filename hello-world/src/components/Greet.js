@@ -6,6 +6,7 @@ const greet = (props) => {
         <div>
             <p onClick={props.click}>Hi , my name {props.name}.</p>
             <p>{props.children}</p>
+            <input value={props.name}/>
         </div>
     );
 }
