@@ -15,10 +15,17 @@ class App extends React.Component{
       name : [newName , 'Suman']
     })
   }
+
+  changeName = (event)=>{
+    this.setState({
+      name: [event.target.value , 'Suman']
+    })
+
+  }
   render(){
     return (
       <div className="App">
-        <Greet name={this.state.name[0]} />
+        <Greet change={this.changeName} name={this.state.name[0]} />
         <Greet click={this.swapName.bind(this , 'SB')} name={this.state.name[1]} >I am 20 years old. </Greet>
         {/* we can also do as click ={ ()=> this.swapName('SB')} but its not a good idea. */}
         <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
