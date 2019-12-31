@@ -8,19 +8,19 @@ class App extends React.Component{
     name : [ 'Suman' , 'Sujan']
   }
 
-  swapName = () => {
+  swapName = (newName) => {
     // console.log('clicked') ;
     // this.state.name[0] = 'Sujan' ;  DONOT DO THIS !
     this.setState({
-      name : ['Sujan' , 'Suman']
+      name : [newName , 'Suman']
     })
   }
   render(){
     return (
       <div className="App">
         <Greet name={this.state.name[0]} />
-        <Greet click={this.swapName} name={this.state.name[1]} >I am 20 years old. </Greet>
-        <button onClick={this.swapName}>Swap Name</button>
+        <Greet name={this.state.name[1]} >I am 20 years old. </Greet>
+        <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
     </div>
     );
   }
