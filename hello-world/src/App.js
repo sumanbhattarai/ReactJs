@@ -5,7 +5,7 @@ import Greet from './components/Greet' ;
 
 class App extends React.Component{
   state = {
-    name : [ 'Suman' , 'Sujan'],
+    name : ['Suman' , 'Sujan'],
     show : true 
   }
 
@@ -36,8 +36,13 @@ class App extends React.Component{
     if(this.state.show === true) {
       person = (
         <div>
-          <Greet change={this.changeName} name={this.state.name[0]} />
-          <Greet click={this.swapName.bind(this , 'SB')} name={this.state.name[1]} >I am 20 years old. </Greet>
+          {
+            this.state.name.map(name => {
+              return <Greet name={name} /> ;
+            })
+          }
+          {/* <Greet change={this.changeName} name={this.state.name[0]} />
+          <Greet click={this.swapName.bind(this , 'SB')} name={this.state.name[1]}> I am 20 years old. </Greet> */}
           {/* we can also do as click ={ ()=> this.swapName('SB')} but its not a good idea. */}
         </div>
       );
