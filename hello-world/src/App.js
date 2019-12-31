@@ -30,27 +30,27 @@ class App extends React.Component{
     })
   }
 
-  buttonName = ()=> {
-    if(this.state.show === true) 
-      return 'Hide' ;
-    else
-      return 'Show' ;
-  }
-
   render(){
+    let person = null ;
+    let buttonName = 'Hide' ;
+    if(this.state.show === true) {
+      person = (
+        <div>
+          <Greet change={this.changeName} name={this.state.name[0]} />
+          <Greet click={this.swapName.bind(this , 'SB')} name={this.state.name[1]} >I am 20 years old. </Greet>
+          {/* we can also do as click ={ ()=> this.swapName('SB')} but its not a good idea. */}
+        </div>
+      );
+    }
+    else {
+      buttonName = 'Show' ;
+    }
     return (
       <div className="App">
-        {
-          this.state.show === true ?
-        <div>
-        <Greet change={this.changeName} name={this.state.name[0]} />
-        <Greet click={this.swapName.bind(this , 'SB')} name={this.state.name[1]} >I am 20 years old. </Greet>
-        {/* we can also do as click ={ ()=> this.swapName('SB')} but its not a good idea. */}
-        </div> : null 
-        }
-        <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
-        <button onClick={this.changeShowState}>{this.buttonName()}</button>
-    </div>
+        {person}
+          <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
+          <button onClick={this.changeShowState}>{buttonName}</button>
+      </div>
     );
   }
 }
