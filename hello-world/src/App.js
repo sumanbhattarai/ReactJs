@@ -25,9 +25,8 @@ class App extends React.Component{
   }
 
   changeShowState = () =>{
-    const showStatus = this.state.show ;
     this.setState({
-      show : !showStatus
+      show : !this.state.show
     })
   }
 
