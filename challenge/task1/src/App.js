@@ -10,9 +10,10 @@ class App extends React.Component {
 
   changedInput = (event)=> {
     const input = event.target.value ;
+    const length = input.length ;
     this.setState({
       input : input ,
-      length : input.length
+      length : length
     })
   }
 
@@ -20,8 +21,10 @@ class App extends React.Component {
     const input = this.state.input.split('') ;
     input.splice(index , 1) ;
     const newInput = input.join('') ;
+    const newLenght = newInput.length ;
     this.setState({
-      input : newInput
+      input : newInput ,
+      length : newLenght
     })
   }
 
