@@ -17,9 +17,11 @@ class App extends React.Component{
     })
   }
 
-  changeName = (event)=>{
+  changeName = (event , index)=>{
+    const name = [...this.state.name] ;
+    name[index] = event.target.value ;
     this.setState({
-      name: [event.target.value , 'Suman']
+      name : name
     })
 
   }
@@ -31,7 +33,7 @@ class App extends React.Component{
   }
 
   deleteHandler = (personIndex) => {
-    const name =  this.state.name ;
+    const name =  [...this.state.name] ;
     name.splice(personIndex , 1 ) ;
     this.setState({
       name : name 
@@ -46,7 +48,7 @@ class App extends React.Component{
         <div>
           {
             this.state.name.map((name , index) => {
-              return <Greet name={name} click={()=>this.deleteHandler(index)} /> ;
+              return <Greet name={name} click={()=>this.deleteHandler(index)} change={(event)=>this.changeName(event , index)} /> ;
             })
           }
           {/* <Greet change={this.changeName} name={this.state.name[0]} />
