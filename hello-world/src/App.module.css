@@ -28,13 +28,33 @@
   color: #61dafb;
 }
 
-.red {
-  color : red ;
+
+.App button {
+  background-color: #282c34;
+  color: #ffffff;
+  width : 150px ;
+  height: 60px;
+  border-radius: 20px;
+  border : none ;
+  outline : none ;
+  margin : 10px;
 }
 
-.bold {
-  font-weight: bold;
+.App button:hover {
+  background-color: black;
+  cursor: pointer;
 }
+
+.App button.red {
+  background-color : indianred;
+}
+
+.App button.red:hover {
+  background-color: red ;
+}
+
+
+
 
 @keyframes App-logo-spin {
   from {

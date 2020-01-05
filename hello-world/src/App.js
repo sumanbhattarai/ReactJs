@@ -43,27 +43,7 @@ class App extends React.Component{
 
   render(){
 
-    const buttonStyle = {
-      backgroundColor : 'white' ,
-      color : 'black' , 
-      border : '1px solid black' ,
-      outline : 'none' ,
-      width : '100px' ,
-      height : '40px' ,
-      // ':hover' : {
-      //   backgroundColor : 'green' ,
-      //   cursor : 'pointer'
-      // }
-    }
-
-    let classes = [] ;
-    if(this.state.name.length <=2) {
-      classes.push(Style.red) ;
-    }
-    if(this.state.name.length <=1 ){
-      classes.push(Style.bold) ;
-    }
-
+    let showButtonClass = null ;
     let person = null ;
     let buttonName = 'Hide' ;
     if(this.state.show === true) {
@@ -82,7 +62,7 @@ class App extends React.Component{
     }
     else {
       buttonName = 'Show' ;
-      buttonStyle.backgroundColor = 'red' 
+      showButtonClass = Style.red ;
       // buttonStyle.color = 'white' 
       // buttonStyle[':hover'] = {
       //   backgroundColor : 'pink' ,
@@ -92,10 +72,10 @@ class App extends React.Component{
     return (
       // <StyleRoot>
         <div className={Style.App}>
-          <p className={classes.join(' ')}>There are some persons below : </p>
+          <p>There are some persons below : </p>
           {person}
             <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
-            <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
+            <button className={showButtonClass} onClick={this.changeShowState}>{buttonName}</button>
         </div>
       // </StyleRoot>
     );
