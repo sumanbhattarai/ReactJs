@@ -2,7 +2,7 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Greet from './components/Greet' ;
-import Raidum from 'radium';
+import Radium from 'radium';
 
 class App extends React.Component{
   state = {
@@ -50,6 +50,10 @@ class App extends React.Component{
       outline : 'none' ,
       width : '100px' ,
       height : '40px' ,
+      ':hover' : {
+        backgroundColor : 'green' ,
+        cursor : 'pointer'
+      }
     }
 
     let classes = [] ;
@@ -80,6 +84,10 @@ class App extends React.Component{
       buttonName = 'Show' ;
       buttonStyle.backgroundColor = 'red' 
       buttonStyle.color = 'white' 
+      buttonStyle[':hover'] = {
+        backgroundColor : 'pink' ,
+        cursor : 'pointer'
+      }
     }
     return (
       <div className="App">
@@ -92,4 +100,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default Radium(App);
