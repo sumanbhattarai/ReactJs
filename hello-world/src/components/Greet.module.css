@@ -12,3 +12,9 @@
     text-align: center;
 
 }
+
+@media( min-width : 500px ){
+    .Greet {
+        width : 600px;
+    }
+}
