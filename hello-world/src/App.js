@@ -43,6 +43,14 @@ class App extends React.Component{
 
   render(){
 
+    let textStyle = [] ;
+    if(this.state.name.length <=2) {
+        textStyle.push(Style.redColor) ;
+    }
+    if(this.state.name.length <=1 ) {
+      textStyle.push(Style.boldText) ;
+    }
+
     let showButtonClass = null ;
     let person = null ;
     let buttonName = 'Hide' ;
@@ -72,7 +80,7 @@ class App extends React.Component{
     return (
       // <StyleRoot>
         <div className={Style.App}>
-          <p>There are some persons below : </p>
+          <p className = {textStyle.join(' ')}>There are some persons below : </p>
           {person}
             <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
             <button className={showButtonClass} onClick={this.changeShowState}>{buttonName}</button>
