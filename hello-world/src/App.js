@@ -2,7 +2,7 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Greet from './components/Greet' ;
-import Radium from 'radium';
+import Radium , {StyleRoot } from 'radium';
 
 class App extends React.Component{
   state = {
@@ -90,12 +90,14 @@ class App extends React.Component{
       }
     }
     return (
-      <div className="App">
-        <p className={classes.join(' ')}>There are some persons below : </p>
-        {person}
-          <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
-          <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <p className={classes.join(' ')}>There are some persons below : </p>
+          {person}
+            <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
+            <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
+        </div>
+      </StyleRoot>
     );
   }
 }
