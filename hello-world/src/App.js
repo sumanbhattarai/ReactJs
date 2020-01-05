@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './App.css';
+import Style from './App.module.css';
 import Greet from './components/Greet' ;
 // import Radium , {StyleRoot } from 'radium';
 
@@ -58,10 +58,10 @@ class App extends React.Component{
 
     let classes = [] ;
     if(this.state.name.length <=2) {
-      classes.push('red') ;
+      classes.push(Style.red) ;
     }
     if(this.state.name.length <=1 ){
-      classes.push('bold') ;
+      classes.push(Style.bold) ;
     }
 
     let person = null ;
@@ -91,7 +91,7 @@ class App extends React.Component{
     }
     return (
       // <StyleRoot>
-        <div className="App">
+        <div className={Style.App}>
           <p className={classes.join(' ')}>There are some persons below : </p>
           {person}
             <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>

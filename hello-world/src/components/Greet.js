@@ -1,5 +1,5 @@
 import React from 'react' ;
-import './Greet.css' ;
+import Style from './Greet.module.css' ;
 // import Radium from 'radium' ;
 
 
@@ -10,7 +10,7 @@ const greet = (props) => {
     //     }
     // };
     return(
-        <div className = "Greet">
+        <div className = {Style.Greet}>
             <p onClick={props.click}>Hi , my name {props.name}.</p>
             <p>{props.children}</p>
             <input value={props.name} onChange={props.change} />
