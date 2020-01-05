@@ -51,6 +51,14 @@ class App extends React.Component{
       height : '40px' ,
     }
 
+    let classes = [] ;
+    if(this.state.name.length <=2) {
+      classes.push('red') ;
+    }
+    if(this.state.name.length <=1 ){
+      classes.push('bold') ;
+    }
+
     let person = null ;
     let buttonName = 'Hide' ;
     if(this.state.show === true) {
@@ -74,6 +82,7 @@ class App extends React.Component{
     }
     return (
       <div className="App">
+        <p className={classes.join(' ')}>There are some persons below : </p>
         {person}
           <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
           <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
