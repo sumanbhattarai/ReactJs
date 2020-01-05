@@ -41,6 +41,16 @@ class App extends React.Component{
   }
 
   render(){
+
+    const buttonStyle = {
+      backgroundColor : 'white' ,
+      color : 'black' , 
+      border : '1px solid black' ,
+      outline : 'none' ,
+      width : '100px' ,
+      height : '40px' ,
+    }
+
     let person = null ;
     let buttonName = 'Hide' ;
     if(this.state.show === true) {
@@ -59,12 +69,14 @@ class App extends React.Component{
     }
     else {
       buttonName = 'Show' ;
+      buttonStyle.backgroundColor = 'red' 
+      buttonStyle.color = 'white' 
     }
     return (
       <div className="App">
         {person}
           <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
-          <button onClick={this.changeShowState}>{buttonName}</button>
+          <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
       </div>
     );
   }
