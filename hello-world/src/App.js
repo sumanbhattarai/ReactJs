@@ -2,7 +2,7 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Greet from './components/Greet' ;
-import Radium , {StyleRoot } from 'radium';
+// import Radium , {StyleRoot } from 'radium';
 
 class App extends React.Component{
   state = {
@@ -50,10 +50,10 @@ class App extends React.Component{
       outline : 'none' ,
       width : '100px' ,
       height : '40px' ,
-      ':hover' : {
-        backgroundColor : 'green' ,
-        cursor : 'pointer'
-      }
+      // ':hover' : {
+      //   backgroundColor : 'green' ,
+      //   cursor : 'pointer'
+      // }
     }
 
     let classes = [] ;
@@ -83,23 +83,25 @@ class App extends React.Component{
     else {
       buttonName = 'Show' ;
       buttonStyle.backgroundColor = 'red' 
-      buttonStyle.color = 'white' 
-      buttonStyle[':hover'] = {
-        backgroundColor : 'pink' ,
-        cursor : 'pointer'
-      }
+      // buttonStyle.color = 'white' 
+      // buttonStyle[':hover'] = {
+      //   backgroundColor : 'pink' ,
+      //   cursor : 'pointer'
+      // }
     }
     return (
-      <StyleRoot>
+      // <StyleRoot>
         <div className="App">
           <p className={classes.join(' ')}>There are some persons below : </p>
           {person}
             <button onClick={this.swapName.bind(this , 'Max')}>Swap Name</button>
             <button style={buttonStyle} onClick={this.changeShowState}>{buttonName}</button>
         </div>
-      </StyleRoot>
+      // </StyleRoot>
     );
   }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
+
