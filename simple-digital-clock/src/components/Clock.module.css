@@ -1,0 +1,14 @@
+
+.time {
+    border : 1px solid black;
+    margin-top : 22% ;
+    text-align:  center;
+    justify-content: center;
+    align-items: center;
+}
+
+.time p {
+    color : #707070 ;
+    font-size: 40px;
+    font-weight: bold;
+}
