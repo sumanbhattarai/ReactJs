@@ -1,0 +1,29 @@
+h1{
+  text-align: center;
+}
+
+.game-board{
+  width : 600px;
+  height: 600px;
+  border : 1px solid black;
+  margin: auto;
+  position: relative;
+}
+
+.snake-dots{
+  position: absolute;
+  width : 2% ;
+  height: 2% ;
+  border : 1px solid white ;
+  background-color: black;
+}
+
+.food{
+  position: absolute ;
+  background-color: red ;
+  border : 1px solid red ;
+  height: 2% ;
+  width : 2% ;
+  z-index: 1 ;
+  border: 1px solid white;
+}
