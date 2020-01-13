@@ -1,0 +1,17 @@
+
+.numberBox{
+    width : 400px;
+    border : 1px solid black ;
+    margin : auto;
+}
+
+.numberBox button {
+    width : 100px;
+    height: 40px ;
+    outline : none ;
+    cursor: pointer;
+}
+
+.numberBox button:hover{
+    background-color: aliceblue;
+}

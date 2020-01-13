@@ -1,0 +1,18 @@
+
+
+h1{
+  text-align: center;
+}
+
+.resultBox{
+  background-color: bisque;
+  width : 400px;
+  height: 50px;
+  border : 1px solid black;
+  margin : auto ;
+  text-align: right;
+}
+
+.resultBox h2 {
+  color : #777777 ;
+}
