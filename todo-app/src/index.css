@@ -1,0 +1,57 @@
+h1{
+  text-align: center;
+}
+
+
+.input-box {
+  margin : auto;
+}
+
+input {
+  width : 500px;
+  height: 50px;
+  margin-left : 32%;
+}
+
+.add-button{
+  width : 100px;
+  height: 40px ;
+  border : 1px solid skyblue;
+  background-color: skyblue;
+  color : white ;
+  border-radius: 25px;
+  margin-left : 47% ;
+  margin-top : 20px;
+  cursor: pointer;
+}
+
+.add-button:hover{
+  background-color: dodgerblue;
+  font-size: 14px;
+}
+
+::placeholder{
+  text-align: center;
+}
+
+.task-box{
+  border : 1px solid black ;
+  width : 600px;
+  margin-left : 28%;
+  margin-top : 30px;
+}
+
+.task-name {
+  background-color: skyblue;
+  color: white ;
+  padding : 20px;
+  text-align: left;
+  position: relative;
+}
+
+.delete-button {
+  position: absolute ;
+  right: 20px;
+  cursor: pointer;
+}
+
