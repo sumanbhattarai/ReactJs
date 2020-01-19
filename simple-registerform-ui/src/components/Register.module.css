@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.inputBox{
+    /* border : 2px solid black; */
+    padding : 20px;
+    width : 270px;
+    position: relative;
+    left : 39%;
+    margin-top:5px;
+}
+
+::placeholder{
+    text-align: center ;
+}
+
+input[type=text] , input[type=password] , input[type=email]{
+    width : 250px;
+    height: 30px;
+    border : none ;
+    border-bottom: 1px solid black ;
+    padding : 5px;
+    transition: 0.5s all;
+}
+
+input[type=text]:focus , input[type=email]:focus , input[type=password]:focus{
+    border-bottom: 1px solid red ;
+    box-shadow: 0px 5px 5px -5px red;
+}
+
+input[type=submit]{
+    width : 100px;
+    height: 40px;
+    text-align: center;
+    background-color: red;
+    border : none ;
+    outline : none ;
+    color : white ;
+    font-size: 15px;
+    box-shadow: 5px 5px 5px 0px  #707070;
+    transition : 1s all;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+    background-color : black ;
+    box-shadow: 0px 5px 5px -5px black;
+}
+
+#login{
+    font-size: 12px;
+    color : #707070;
+    margin-left: 15px;
+}
+
+

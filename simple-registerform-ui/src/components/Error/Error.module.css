@@ -1,0 +1,35 @@
+
+
+.errorBox{
+    background-color: red ;
+    color : white ;
+    text-align: center;
+    padding : 10px;
+    width : 400px;
+    line-height: 30px;
+    border-radius: 5px;
+    position: relative;
+    left : 35%;
+    margin-bottom: 5px;
+}
+
+#close{
+    float : right;
+    color : white;
+    font-size: 30px ;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+#close:hover{
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}
