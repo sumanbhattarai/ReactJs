@@ -1,0 +1,23 @@
+.burgerBox{
+    width : 80% ;
+    height: 250px ;
+    overflow : scroll ;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: auto;
+}
+
+@media (min-width : 1000px) {
+    .burgerBox{
+        width : 50% ;
+        height: 500px;
+    }
+}
+
+@media(min-width : 400px) and (max-width : 1000px){
+    .burgerBox{
+        width : 400px;
+        height: 400px;
+    }
+}
