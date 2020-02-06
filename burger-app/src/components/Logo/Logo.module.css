@@ -1,0 +1,12 @@
+
+.logoBox{
+    height: 80%;
+    background-color: white ;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.logoBox img {
+    height: 100%;
+}

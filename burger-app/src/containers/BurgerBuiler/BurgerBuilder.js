@@ -3,6 +3,7 @@ import Burger from '../../components/Burger/Burger';
 import BuilderControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal' ;
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary' ;
+import BackDrop from '../../components/UI/BackDrop/BackDrop' ;
 
 const INGREDIENTS_PRICE = {
     Salad : 10 ,
@@ -18,7 +19,8 @@ export default class BurgerBuilder extends React.Component{
             Meat : 0 ,
             Bacon : 0
         },
-        totalPrice : 40
+        totalPrice : 40,
+        showModal : false
     }
 
     addIngredients = type =>{
@@ -51,6 +53,22 @@ export default class BurgerBuilder extends React.Component{
             totalPrice : newPrice
         });
     }
+
+    showModal = ()=>{
+        this.setState({
+            showModal: true
+        });
+    }
+
+    hideModal = ()=>{
+        this.setState({
+            showModal : false
+        })
+    }
+
+    continue = ()=>{
+        alert('Successfuly submited');
+    }
     
 
     render(){
@@ -63,16 +81,33 @@ export default class BurgerBuilder extends React.Component{
         if(ingredientsArray.length !== 0){
             isPurchaseable= true ;
         }
+
+        let modal = null ;
+        if(this.state.showModal === true){
+            modal = (
+                <Fragment>
+                    <Modal>
+                        <OrderSummary ingredients={this.state.ingredients} totalPrice={this.state.totalPrice} hideModal={this.hideModal} continue={this.continue} />
+                    </Modal>
+                    <BackDrop hideBackDrop={this.hideModal}/>
+                </Fragment>
+            );
+        }
         return(
             <Fragment>
-                <Modal>
-                    <OrderSummary ingredients={this.state.ingredients} />
-                </Modal>
+                {modal}
                 <div>
                     <Burger  ingredients = {this.state.ingredients}/>
                 </div>
                 <div>
-                    <BuilderControls addIngredients = {this.addIngredients} removeIngredients={this.removeIngredients} price={this.state.totalPrice} isPurchaseable={isPurchaseable} disabled={disabledInfo} />
+                    <BuilderControls 
+                    addIngredients = {this.addIngredients} 
+                    removeIngredients={this.removeIngredients} 
+                    price={this.state.totalPrice} 
+                    isPurchaseable={isPurchaseable} 
+                    disabled={disabledInfo} 
+                    showModal = {this.showModal}
+                    />
                 </div>
             </Fragment>
         );
