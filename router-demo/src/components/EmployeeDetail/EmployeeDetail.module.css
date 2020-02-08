@@ -1,0 +1,32 @@
+
+.employeeBox{
+    width : 270px ;
+    margin : 20px;
+    padding : 20px;
+    text-align: center;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(181,177,181,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(181,177,181,1);
+    box-shadow: 10px 10px 5px 0px rgba(181,177,181,1);
+    transition: all 0.3s;
+}
+
+.employeeBox:hover{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.imageBox{
+    width : 100px ;
+    line-height: 100px ;
+    border-radius: 50px;
+    border : 1px solid red ;
+    margin : auto ;
+}
+
+a{
+    text-decoration: none;
+}
