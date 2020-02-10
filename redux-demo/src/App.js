@@ -14,10 +14,10 @@ import {connect} from 'react-redux' ;
         <button onClick={this.props.onDecrement}>Decrement</button>
         <button onClick={this.props.onSaveResults}>Save Result</button>
         <ul>
-          {this.state.results.map((results , index)=>{
+          {this.props.results.map((results , index)=>{
              return <li key={index}>
                         {results}
-                        <button onClick={()=>{this.deleteResult(index)}}>Delete</button>
+                        <button onClick={()=>{this.props.onDeleteResult(index)}}>Delete</button>
                     </li>
           })}
         </ul>
@@ -28,7 +28,8 @@ import {connect} from 'react-redux' ;
 
 const mapStateToProps = state => {
   return {
-      ctr : state.counter
+      ctr : state.counter ,
+      results : state.results
   };
 } 
 
@@ -36,7 +37,9 @@ const mapDispatchToProps = dispatch => {
     return {
         onIncrement : ()=> dispatch({type : 'INCREMENT'}) ,
         onDecrement : ()=> dispatch({type:'DECREMENT'}) ,
-        onSaveResults : ()=> dispatch({type:'SAVE'})
+        onSaveResults : ()=> dispatch({type:'SAVE'}) ,
+        onDeleteResult : (index)=>dispatch({type:'DELETE_RESULT' , index : index})
+
     };
 };
 
