@@ -1,2 +1,2 @@
 # ReactJs
-Practised Code of ReactJs
+Practised Code of React.
